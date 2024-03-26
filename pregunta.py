@@ -48,10 +48,11 @@ def ingest_data():
             data["porcentaje_de_palabras_clave"].append(porcentaje_palabras)
             data["principales_palabras_clave"].append(palabras_clave)
         elif data["principales_palabras_clave"]:
-            data["principales_palabras_clave"][-1] += " " + " ".join(linea)
+            line = data["principales_palabras_clave"].pop() + " " + " ".join(linea)              
+            data["principales_palabras_clave"].append(line.strip())
 
     # Crear el DataFrame
     df = pd.DataFrame(data)
     return df
 
-#print(ingest_data())
+print(ingest_data())
