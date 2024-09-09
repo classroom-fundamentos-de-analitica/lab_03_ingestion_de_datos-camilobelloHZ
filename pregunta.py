@@ -55,4 +55,4 @@ def ingest_data():
     df = pd.DataFrame(data)
     return df
 
-print(ingest_data())
+#print(ingest_data())
